@@ -11,18 +11,17 @@ Before running the experiments, ensure that you have installed the Mistral 7B v0
 1. Download the Mistral 7B v0.2 model and place it in the directory `/mistralai/4`.
 2. Ensure the folder structure matches the following:
 
+```
 /mistralai/ 
-
 └── 4/
-
   ├── config.json
-  
   ├── generation_config.json
   ├── model.safetensors
   ├── special_tokens_map.json
   ├── tokenizer_config.json
   ├── tokenizer.json
   └── tokenizer.model
+```
 
 
 ### Dependencies
