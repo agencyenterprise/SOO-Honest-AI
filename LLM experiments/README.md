@@ -69,9 +69,9 @@ Finally, run the run_MT_Bench_evaluation.ipynb notebook. This notebook evaluates
 jupyter notebook run_MT_Bench_evaluation.ipynb
 ```
 ### Additional Scripts
-* generate_training_data.py: Script to generate the necessary training data for fine-tuning.
-* generate_mse_pairs.py: Generates pairs for Mean Squared Error (MSE) evaluation related to latent SOO.
-* measure_mse.py: Measures MSE for latent SOO experiments.
+* 'generate_training_data.py': Script to generate the necessary training data for fine-tuning.
+* 'generate_mse_pairs.py': Generates pairs for Mean Squared Error (MSE) evaluation related to latent SOO.
+* 'measure_mse.py': Measures MSE for latent SOO experiments.
 * gen_model_answer.py: Used for MT-Bench model answer generation.
 * model_adapter.py: Model adapter utility functions for various tasks.
 ### Notes
