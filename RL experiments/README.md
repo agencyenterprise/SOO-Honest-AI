@@ -76,17 +76,5 @@ There are various plotting scripts available to visualize the results of differe
 - GPU is highly recommended for fine-tuning and evaluation due to the computational intensity of the experiments.
 - Run experiments with multiple seeds to ensure reproducibility.
 
-## Citation
-
-If you use this code in your work, please cite our paper:
-
------
-@article{carauleanu2024soo,
-  title={Towards Safe and Honest AI Agents with Neural Self-Other Overlap},
-  author={Marc Carauleanu and Michael Vaiana and Diogo de Lucena and Judd Rosenblatt and Cameron Berg},
-  journal={ICLR},
-  year={2025}
-}
------
 
 For further information, please refer to the documentation in each script or contact us via email.
