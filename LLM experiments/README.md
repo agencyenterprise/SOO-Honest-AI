@@ -81,9 +81,9 @@ jupyter notebook run_generalisation_experiments.ipynb
 * `measure_mse.py`: Measures MSE for latent SOO experiments.
 * `gen_model_answer.py`: Used for MT-Bench model answer generation.
 * `model_adapter.py`: Model adapter utility functions for various tasks.
-* 
+  
 ### Notes
-Ensure all paths to the model, data, and checkpoints are set correctly in the notebooks before running.
-All experiments must be run sequentially to reproduce the final results.
-Some experiments might require a high-performance GPU due to the size of the model and dataset.
+- Ensure all paths to the model, data, and checkpoints are set correctly in the notebooks before running.
+- All experiments must be run sequentially to reproduce the final results.
+- Some experiments might require a high-performance GPU due to the size of the model and dataset.
 
