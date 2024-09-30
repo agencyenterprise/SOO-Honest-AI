@@ -18,9 +18,9 @@ Before running the experiments, ensure you have the following dependencies insta
 
 You can install the required dependencies using the following command:
 
------
+```
 pip install -r requirements.txt
------
+```
 
 ## Repository Structure
 
@@ -47,23 +47,23 @@ The RL experiments folder contains two main subdirectories:
 ### 1. Fine-tuning the RL Model
 Run the `fine-tune.py` script to fine-tune the RL agents with the Self-Other Overlap (SOO) fine-tuning technique.
 
------
+```
 python fine-tune.py
------
+```
 
 ### 2. Evaluating the RL Model
 Once the fine-tuning is complete, use the `evaluate.py` script to assess the agent's performance.
 
------
+```
 python evaluate.py
------
+```
 
 ### 3. Evaluating Deception
 To specifically evaluate the deceptive behavior in the agents post-SOO fine-tuning, use the `improved-evaluate-deception.py` script.
 
------
+```
 python improved-evaluate-deception.py
------
+```
 
 ### 4. Visualizing Results
 There are various plotting scripts available to visualize the results of different experiments:
