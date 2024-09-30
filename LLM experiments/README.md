@@ -51,7 +51,7 @@ Run the fine_tune_model.ipynb notebook to fine-tune the Mistral 7B v0.2 model us
 jupyter notebook fine_tune_model.ipynb
 ```
 ### 2. Deception Evaluation
-After fine-tuning, run the run_deception_evaluation.ipynb notebook. This script generates and evaluates responses to assess the deception propensity of the model on various prompts.
+After fine-tuning, run the run_deception_evaluation.ipynb notebook. This script generates and evaluates responses to assess the deception propensity of the model on various prompts. Ensure that the correct paths are set to the necessary data files, including `false_recommendation_scenarios.pkl`.
 
 ```bash
 jupyter notebook run_deception_evaluation.ipynb
@@ -68,12 +68,20 @@ Finally, run the run_MT_Bench_evaluation.ipynb notebook. This notebook evaluates
 ```bash
 jupyter notebook run_MT_Bench_evaluation.ipynb
 ```
+
+### 5. Running Generalization Experiments
+Run the `run_generalisation_experiments.ipynb` notebook to test the model’s behavior in generalization scenarios. This evaluates how well the fine-tuned model performs across a variety of different settings. Ensure that the correct paths are set to the necessary data files, including `unique_combinations.pkl`.
+
+```bash
+jupyter notebook run_generalisation_experiments.ipynb
+```
 ### Additional Scripts
 * `generate_training_data.py`: Script to generate the necessary training data for fine-tuning.
 * `generate_mse_pairs.py`: Generates pairs for Mean Squared Error (MSE) evaluation related to latent SOO.
 * `measure_mse.py`: Measures MSE for latent SOO experiments.
 * `gen_model_answer.py`: Used for MT-Bench model answer generation.
 * `model_adapter.py`: Model adapter utility functions for various tasks.
+* 
 ### Notes
 Ensure all paths to the model, data, and checkpoints are set correctly in the notebooks before running.
 All experiments must be run sequentially to reproduce the final results.
