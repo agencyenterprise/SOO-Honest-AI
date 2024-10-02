@@ -1,6 +1,6 @@
 # SOO-Honest-AI: Towards Safe and Honest AI Agents with Neural Self-Other Overlap
 
-This repository contains the code and experiments for the paper titled **"Towards Safe and Honest AI Agents with Neural Self-Other Overlap"**. The research introduces a novel model fine-tuning method called Self-Other Overlap (SOO) to reduce deception in AI systems. SOO aims to align the internal representations of AI models to reduce deceptive behavior while maintaining task performance.
+This repository contains the code and experiments for the paper titled **"Towards Safe and Honest AI Agents with Neural Self-Other Overlap"**. The research introduces a novel model fine-tuning method called Self-Other Overlap (SOO) to reduce deception in AI systems. SOO aims to align the internal representations of self and others in AI models to reduce deceptive behavior while maintaining task performance.
 
 ## Structure of the Repository
 
@@ -31,14 +31,5 @@ This folder contains experiments based on reinforcement learning (RL) environmen
 
 *As AI systems increasingly make critical decisions, deceptive AI poses a significant challenge to trust and safety. We present Self-Other Overlap (SOO) fine-tuning, a promising approach in AI Safety that could substantially improve our ability to build honest artificial intelligence. Inspired by cognitive neuroscience research on empathy, SOO aims to align how AI models represent themselves and others. Our experiments with Mistral 7B v0.2 demonstrate SOO's efficacy: deceptive responses in this large language model dropped from 95.2% to 15.9% with no observed reduction in general task performance, while in reinforcement learning scenarios, SOO-trained agents showed significantly reduced deceptive behavior. SOO's focus on internal representations offers strong potential for generalization across AI architectures. While current applications focus on language models and simple RL environments, SOO could pave the way for more trustworthy AI in broader domains. Ethical implications and long-term effects warrant further investigation, but SOO represents a significant step forward in AI safety research.*
 
-## Authors
 
-- Marc Carauleanu, AE Studio
-- Michael Vaiana, AE Studio
-- Diogo de Lucena, AE Studio
-- Judd Rosenblatt, AE Studio
-- Cameron Berg, AE Studio
 
-## Contact
-
-For any inquiries or further information, please reach out to **Marc Carauleanu** at [marc@ae.studio](mailto:marc@ae.studio).
