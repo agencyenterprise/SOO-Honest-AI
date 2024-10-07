@@ -58,9 +58,9 @@ This section outlines the main folders and files in the `maddpg-pytorch` folder.
 
 Before running any of the following commands, ensure you are in the `maddpg-pytorch` folder:
 
----
+```
 cd maddpg-pytorch
----
+```
 
 ### 1. Train Honest and Deceptive Baselines
 
@@ -76,9 +76,9 @@ Make sure to check `simple_adversary.py` and ensure that the correct deceptive/n
 
 Once the deceptive baseline is trained, you can fine-tune it using SOO with the following command:
 
----
+```
 python train.py simple_adversary MADDPG --pre_trained <deceptive_baseline_run_num> --n_episodes 10000 --episode_length 50 --self_other True
----
+```
 
 Ensure the correct deceptive reward is being used in `simple_adversary.py` before running this command.
 
@@ -86,9 +86,9 @@ Ensure the correct deceptive reward is being used in `simple_adversary.py` befor
 
 To generate classification results for both deceptive and honest baselines, run the following command:
 
----
+```
 python improved-evaluate-deception.py simple_adversary MADDPG --run_deceptive <deceptive_baseline_run_num> --run_honest <honest_baseline_run_num> --episode_length 50
----
+```
 
 ### 4. Visualizing Results
 
@@ -96,17 +96,17 @@ python improved-evaluate-deception.py simple_adversary MADDPG --run_deceptive <d
 
 Use `plot_parameter_sweep.py` to visualize parameter sweep results across multiple runs and seeds:
 
----
+```
 python plot_parameter_sweep.py --runs <deceptive_run_num> <SOO_run_num> <honest_run_num> --seeds 155 714 1908 1549 1195 1812 542 2844
----
+```
 
 #### Quantitative Analysis Results
 
 To generate quantitative analysis results, use the following command:
 
----
+```
 python plot_quantitative_analysis.py --deceptive_run <deceptive_run_num> --honest_run <honest_run_num> --soo_run <SOO_run_num>
----
+```
 
 ## Notes
 
