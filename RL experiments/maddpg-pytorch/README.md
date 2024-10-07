@@ -2,6 +2,18 @@
 
 This folder contains the scripts and files used for reinforcement learning (RL) experiments, as part of the paper "**Towards Safe and Honest AI Agents with Neural Self-Other Overlap**." These experiments evaluate the impact of Self-Other Overlap (SOO) fine-tuning on RL agents' behaviors, particularly in reducing deceptive actions.
 
+# MADDPG-PyTorch
+PyTorch Implementation of MADDPG from [*Multi-Agent Actor-Critic for Mixed
+Cooperative-Competitive Environments*](https://arxiv.org/abs/1706.02275) (Lowe et. al. 2017)
+
+## Requirements
+
+* [OpenAI baselines](https://github.com/openai/baselines), commit hash: 98257ef8c9bd23a24a330731ae54ed086d9ce4a7
+* My [fork](https://github.com/shariqiqbal2810/multiagent-particle-envs) of Multi-agent Particle Environments
+* [PyTorch](http://pytorch.org/), version: 0.3.0.post4
+* [OpenAI Gym](https://github.com/openai/gym), version: 0.9.4
+* [Tensorboard](https://github.com/tensorflow/tensorboard), version: 0.4.0rc3 and [Tensorboard-Pytorch](https://github.com/lanpa/tensorboard-pytorch), version: 1.0 (for logging)
+
 ### Dependencies
 
 You can install the required dependencies using the following command:
@@ -53,6 +65,11 @@ This section outlines the main folders and files in the `maddpg-pytorch` folder.
 10. **multiagent-particle-envs (RL Environment Folder)**
 
     This folder contains the multi-agent particle environments used for training and evaluating the RL agents in the experiments. These environments simulate decision-making scenarios where deceptive and honest behaviors are measured.
+
+
+### Modified Physical Deception Environment
+
+We conducted the RL experiment in a modified Physical Deception environment, featuring two agents and two landmarks: a goal landmark and a fake landmark. Both agents are rewarded for approaching the goal. The blue agent knows the landmarks' positions, while the "color-blind" red agent does not, leading it to follow the blue agent toward the goal. The red agent is trapped if it reaches the fake landmark. Agents know each other's positions only when they are within a predefined observation radius of each other. They are initialized randomly in the environment within each other's observation radius.
 
 ## Running the Experiments
 
