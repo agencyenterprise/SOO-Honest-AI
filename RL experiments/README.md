@@ -6,9 +6,9 @@ This folder contains the scripts and files used for reinforcement learning (RL) 
 
 You can install the required dependencies using the following command:
 
----
+```
 pip install -r requirements.txt
----
+```
 
 ## Repository Structure
 
@@ -66,9 +66,9 @@ cd maddpg-pytorch
 
 To train the honest and deceptive baselines, use the following command:
 
----
+```
 python train.py simple_adversary MADDPG --n_episodes 40000 --episode_length 50
----
+```
 
 Make sure to check `simple_adversary.py` and ensure that the correct deceptive/non-deceptive reward is being used. Use `python train.py --help` for more information.
 
