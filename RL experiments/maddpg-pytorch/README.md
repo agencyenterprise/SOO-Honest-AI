@@ -71,6 +71,8 @@ This section outlines the main folders and files in the `maddpg-pytorch` folder.
 
 We conducted the RL experiment in a modified Physical Deception environment, featuring two agents and two landmarks: a goal landmark and a fake landmark. Both agents are rewarded for approaching the goal. The blue agent knows the landmarks' positions, while the "color-blind" red agent does not, leading it to follow the blue agent toward the goal. The red agent is trapped if it reaches the fake landmark. Agents know each other's positions only when they are within a predefined observation radius of each other. They are initialized randomly in the environment within each other's observation radius.
 
+<img src="https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/hzt9gHpNwA2oHtwKX/r23gesvrxezvnedjqy7n" alt="Example GIF" width="500">
+
 ## Running the Experiments
 
 Before running any of the following commands, ensure you are in the `maddpg-pytorch` folder:
