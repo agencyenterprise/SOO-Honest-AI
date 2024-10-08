@@ -2,18 +2,11 @@ import torch
 import random
 import numpy as np
 import pickle, argparse
-import matplotlib.pyplot as plt, json
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from torch.cuda.amp import autocast, GradScaler
-from torch.utils.data import Dataset, DataLoader
-from transformers import AdamW, DataCollatorWithPadding
-from huggingface_hub import login
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
+from peft import PeftModel
 import torch.nn.functional as F
 import os
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-from peft import PeftModel, PeftConfig
-from torch.utils.data import Dataset, DataLoader
 
 def load_model_and_tokenizer(lora_model_dir,  base_model_dir, evaluate_base_model):
     """
@@ -31,7 +24,7 @@ def load_model_and_tokenizer(lora_model_dir,  base_model_dir, evaluate_base_mode
             bnb_4bit_quant_type="nf4",
             bnb_4bit_use_double_quant=True,
         )
-    device_map = {"": torch.cuda.current_device()} if torch.cuda.is_available() else None
+    device_map = "auto"
     model = AutoModelForCausalLM.from_pretrained(base_model_dir, quantization_config=bnb_config, device_map=device_map)
     tokenizer = AutoTokenizer.from_pretrained(base_model_dir)
     chat_template = open('./mistral-instruct.jinja').read()
@@ -155,7 +148,7 @@ def main(model_name, prompt_pairs, base_model, seed):
     
     set_seed(seed)
     
-    lora_model_dir = '/home/ubuntu/projects/WP2/simple_deception/'+model_name
+    lora_model_dir = model_name
     model, tokenizer = load_model_and_tokenizer(lora_model_dir=lora_model_dir,base_model_dir='./mistralai/4', evaluate_base_model=base_model)
     tokenizer.pad_token = tokenizer.eos_token
 

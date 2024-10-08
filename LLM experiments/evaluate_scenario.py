@@ -2,18 +2,11 @@ import torch
 import random
 import numpy as np
 import pickle, argparse
-import matplotlib.pyplot as plt, json
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from torch.cuda.amp import autocast, GradScaler
 from torch.utils.data import Dataset, DataLoader
-from transformers import AdamW, DataCollatorWithPadding
-from huggingface_hub import login
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
-import torch.nn.functional as F
 import os
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-from peft import PeftModel, PeftConfig
-from torch.utils.data import Dataset, DataLoader
+from peft import PeftModel
 
 class CustomPromptDataset(Dataset):
     """
@@ -238,7 +231,7 @@ def main():
     args = parser.parse_args()
     
     set_seed(args.seed)
-    lora_model_dir = '/home/ubuntu/projects/WP2/simple_deception/'+args.model_name
+    lora_model_dir = args.model_name
     model, tokenizer = load_model_and_tokenizer(lora_model_dir=lora_model_dir,base_model_dir='./mistralai/4', evaluate_base_model=args.base_model)
     tokenizer.pad_token = tokenizer.eos_token
     

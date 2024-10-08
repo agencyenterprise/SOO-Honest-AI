@@ -2,17 +2,23 @@
 
 This folder contains the necessary scripts and notebooks to reproduce the experiments for the paper "Towards Safe and Honest AI Agents with Neural Self-Other Overlap." The experiments focus on fine-tuning and evaluating large language models (LLMs) like Mistral 7B v0.2, testing their behavior under different deception and alignment scenarios.
 
-## Prerequisites
+## Downloading the model
 
-Before running the experiments, ensure that you have installed the Mistral 7B v0.2 model locally under the path `/mistralai/4`.
+Before running the experiments, ensure that you have downloaded the [Mistral 7B Instruct v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) model locally under the path `./mistralai/4`:
 
-### Steps to Install Mistral 7B v0.2:
+```bash
+huggingface-cli download mistralai/Mistral-7B-Instruct-v0.2 --local-dir mistralai/4
+```
 
-1. Download the Mistral 7B v0.2 model and place it in the directory `/mistralai/4`.
+This download requires that the Hugging Face token was previosly configured in the environment for example by running `huggingface-cli login` and that the terms of use for the model were accepted on the Hugging Face website.
+
+Optionally, if you would like to manually install the model:
+
+1. Download the Mistral 7B Instruct v0.2 model and place it in the directory `./mistralai/4`.
 2. Ensure the folder structure matches the following:
 
 ```
-/mistralai/ 
+./mistralai/ 
 └── 4/
   ├── config.json
   ├── generation_config.json
@@ -31,10 +37,13 @@ Ensure you have the following packages installed:
 - Python 3.8+
 - PyTorch 1.11+
 - Transformers 4.12+
-- Datasets
+- Pandas
 - Huggingface Accelerate
 - NumPy
 - Scikit-learn
+- Matplotlib
+- PEFT
+- BitsAndBytes
 
 You can install them using:
 
