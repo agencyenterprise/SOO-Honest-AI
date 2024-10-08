@@ -2,17 +2,14 @@ import torch
 import random
 import numpy as np
 import pickle, argparse
-import matplotlib.pyplot as plt, json
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from torch.cuda.amp import autocast, GradScaler
 from torch.utils.data import Dataset, DataLoader
-from transformers import AdamW, DataCollatorWithPadding
-from huggingface_hub import login
-from peft import get_peft_model, LoraConfig, TaskType, PeftModel
+from transformers import AdamW
+from peft import get_peft_model, LoraConfig, TaskType
 import torch.nn.functional as F
 import os
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-from torch.utils.data import Dataset, DataLoader
 
 class CustomPromptDataset(Dataset):
     """
@@ -115,7 +112,7 @@ def load_model_and_tokenizer(model_dir=None):
             bnb_4bit_quant_type="nf4",
             bnb_4bit_use_double_quant=True,
         )
-    device_map = {"": torch.cuda.current_device()} if torch.cuda.is_available() else None
+    device_map = "auto"
     model = AutoModelForCausalLM.from_pretrained(model_dir, quantization_config=bnb_config, device_map=device_map)
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     if(model_dir=="./mistralai/4"):
